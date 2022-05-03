@@ -1,0 +1,41 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "description": "Default preset for use with C.S.V. Alpha's repos",
+  "extends": [
+    "config:base",
+    ":disableDependencyDashboard",
+    ":semanticCommits",
+    ":semanticCommitTypeAll(chore)",
+    "docker:enableMajor",
+    "docker:pinDigests",
+    "helpers:pinGitHubActionDigests"
+  ],
+  "labels": ["dependencies"],
+  "prConcurrentLimit": 0,
+  "rangeStrategy": "bump",
+  "timezone": "Europe/Amsterdam",
+  "packageRules": [
+    {
+      "extends": ["schedule:weekly"],
+      "matchManagers": ["npm", "bundler"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["engines", "resolutions"],
+      "enabled": false
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchPackageNames": ["yarn"],
+      "groupName": "yarn"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "all actions"
+    }
+  ],
+  "enabledManagers": ["bundler", "dockerfile", "github-actions", "npm", "nvm", "ruby-version"]
+}
