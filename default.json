@@ -19,7 +19,7 @@
       "extends": ["schedule:weekly"],
       "matchManagers": ["bundler"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major bundler dependencies",
+      "groupName": "all non-major Bundler dependencies",
       "groupSlug": "all-minor-patch-bundler"
     },
     {
