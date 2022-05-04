@@ -17,10 +17,17 @@
   "packageRules": [
     {
       "extends": ["schedule:weekly"],
-      "matchManagers": ["npm", "bundler"],
+      "matchManagers": ["bundler"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "groupName": "all non-major bundler dependencies",
+      "groupSlug": "all-minor-patch-bundler"
+    },
+    {
+      "extends": ["schedule:weekly"],
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major npm dependencies",
+      "groupSlug": "all-minor-patch-npm"
     },
     {
       "matchManagers": ["npm"],
