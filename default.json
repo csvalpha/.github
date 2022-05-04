@@ -41,6 +41,7 @@
     },
     {
       "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all actions"
     }
   ],
