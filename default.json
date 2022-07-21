@@ -45,5 +45,16 @@
       "groupName": "all actions"
     }
   ],
-  "enabledManagers": ["bundler", "dockerfile", "github-actions", "npm", "nvm", "ruby-version"]
+  "regexManagers": [
+    {
+      "description": "Update actionlint versions in workflow files",
+      "fileMatch": ["^\\.github\\/workflows\\/[^/]+\\.ya?ml$"],
+      "matchStrings": ["\\s+.+download-actionlint\\.bash\\)? (?<currentValue>.+)"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "rhysd\/actionlint",
+      "extractVersionTemplate": "^v?(?<version>.*)$",
+      "versioningTemplate": "semver"
+    }
+  ],
+  "enabledManagers": ["bundler", "dockerfile", "github-actions", "npm", "nvm", "regex", "ruby-version"]
 }
