@@ -43,6 +43,11 @@
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all actions"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": ["postgres"],
+      "enabled": false
     }
   ],
   "regexManagers": [
