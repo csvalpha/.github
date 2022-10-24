@@ -58,8 +58,7 @@
       "matchStrings": ["\\s+.+download-actionlint\\.bash\\)? (?<currentValue>.+)"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "rhysd\\/actionlint",
-      "extractVersionTemplate": "^v?(?<version>.*)$",
-      "versioningTemplate": "semver"
+      "extractVersionTemplate": "^v?(?<version>.*)$"
     }
   ],
   "enabledManagers": ["bundler", "dockerfile", "github-actions", "html", "npm", "nvm", "regex", "ruby-version"]
