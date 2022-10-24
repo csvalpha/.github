@@ -62,5 +62,5 @@
       "versioningTemplate": "semver"
     }
   ],
-  "enabledManagers": ["bundler", "dockerfile", "github-actions", "cdnurl", "npm", "nvm", "regex", "ruby-version"]
+  "enabledManagers": ["bundler", "cdnurl", "dockerfile", "github-actions", "npm", "nvm", "regex", "ruby-version"]
 }
